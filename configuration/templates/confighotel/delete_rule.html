@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <p>Êtes-vous sur de vouloir supprimer cette regle ? </p>
+    <form method="post" action="">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Supprimer">
+        <a class="btn btn-info" href="{% url 'confighotel:list-rule' %}">Retour</a>
+    </form>
+{% endblock %}

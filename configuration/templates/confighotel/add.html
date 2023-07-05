@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}add-chambre{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="form-group m-3">
+                <div class="offset-md-2">
+                    <form action="" method="post" enctype="multipart/form-data" class="form-control w-75 my-4">
+                        <table>
+                            {% csrf_token %}
+                            {{ form.as_table }}
+                        </table>
+                        <input type="submit" value="Configurer" class="m-2 col-md-4 margin-left-input">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}

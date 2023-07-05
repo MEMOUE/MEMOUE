@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}facture{% endblock %}
+
+{% block content %}
+    <div class="">
+        <form action="{% url 'facture' %}" method="post" enctype="multipart/form-data" class="form-group form-control w-50 m-3">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td><input class="form-control m-3" type="text" name="nom" placeholder="Nom du client"></td>
+                </tr>
+                <tr>
+                    <td><input class="form-control m-3" type="text" name="prenom" placeholder="Prenom du client"></td>
+                </tr>
+                <tr>
+                    <td><input class="form-control m-3" type="text" name="service" placeholder="Service utilisé"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="input-group">
+                          <input type="text" name="montant" class="form-control m-3" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Montant de la facture">
+                          <span class="input-group-text h-25 my-3">FCFA</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="">
+                          <label for="formFile" class="form-label">Importer le logo du club</label>
+                          <input class="form-control" type="file" id="formFile" name="logo">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button type="submit" class="btn btn-primary h-25">Imprimer</button></td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'pdf' %}" class="btn btn-outline-secondary">Imprimer lien</a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}

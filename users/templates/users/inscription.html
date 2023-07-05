@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}inscription{% endblock %}
+
+{% block content %}
+    <section class="login">
+        <h1 class="text-center orange">Page d'inscription</h1>
+        <!--<div class="error">
+            {% if form.errors %}
+                {{ form.errors }}
+            {% endif %}
+        </div>
+        -->
+        <div class="container">
+            <div class="row">
+                <div class="form-group m-3">
+                    <div class="offset-md-4">
+                        <form action="" method="post" class="form-control w-50">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="m-2">
+                                    {{ field.label_tag }}
+                                    {% if field.name == 'password1' %}
+                                        <input type="password" class="form-control" id="{{ field.id_for_label }}" name="{{ field.html_name }}">
+                                      {% elif field.name == 'password2' %}
+                                        <input type="password" class="form-control" id="{{ field.id_for_label }}" name="{{ field.html_name }}">
+                                    {% else %}
+                                        {{ field }}
+                                    {% endif %}
+                                </div>
+                                {% if field.errors %}
+                                    <p>
+                                        {{ field.errors.as_text }}
+                                    </p>
+                                {% endif %}
+                            {% endfor %}
+                            <input class="btn-form col-md-6" type="submit" value="S'inscrire">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}

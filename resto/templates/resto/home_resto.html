@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}home-resto{% endblock %}
+
+{% block content %}
+    <a class="col-md-6" href="{% url 'add-menu' %}"><input type="submit" value="Ajouter un menu"></a>
+    <h2 class="text-center orange">Dans cette section ici on mettra la liste des plats ajoutés</h2>
+    <div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for object in object_list %}
+                <div class="col mb-2 mx-2">
+                    <div class="card h-100">
+                        <img src="{{ object.image.url }}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title"><b>Nom du plat : </b>{{ object.nom_menu }}</h5>
+                        <p class="card-text">
+                            <b>Type : </b>{{ object.type }}<br>
+                            <b>Quantite : </b>{{ object.quantite }}<br>
+                            <b>Prix : </b>{{ object.prix }}
+                        </p>
+                        <p>
+                          <a href="{% url 'update-menu' object.id %}">Modifier</a>
+                          <a href="{% url 'delete-menu' object.id %}">Supprimer</a>
+                        </p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-body-secondary">{{ object.date }}</small>
+                      </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}

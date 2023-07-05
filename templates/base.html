@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome-web/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome-web/css/solid.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome-web/css/brands.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-light">
+          <div class="container-fluid">
+              {% if user.is_authenticated %}
+                <a class="navbar-brand" href="{% url 'home-users' %}">
+                    <img src="{{ configuration.image.url }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    {{ configuration.nom }}
+                </a>
+                <ul class="nav justify-content-end">
+                  <li class="nav-item">
+                    <a class="nav-link orange" href="{% url 'facture' %}">Imprimer facture </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link orange" href="{% url 'home-users' %}">Bienvenue : {{ user.username }}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link orange" href="{% url 'deconnexion' %}">Deconnexion</a>
+                  </li>
+                </ul>
+              {% else %}
+                <a class="navbar-brand" href="{% url 'index' %}">
+                  <img src="{{ configuration.image.url }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    {{ configuration.nom }}
+                </a>
+                <ul class="nav justify-content-end">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'inscription' %}">inscription</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'connexion' %}">connexion</a>
+                  </li>
+                </ul>
+              {% endif %}
+          </div>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </main>
+    {% block footer %}{% endblock %}
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/0d3e5f82ca.js" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+</body>
+</html>

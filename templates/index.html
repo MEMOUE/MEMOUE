@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}welcome page{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <p class="fs-5 fw-semibold text-uppercase">Bienvenue dans l'appli <span>Gestion Plus</span> </p>
+        <p class="fs-4">Connectez-vous pour pouvoir utiliser l'ensemble des services oferts par l'application</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-1">
+                <button class="col-4 m-3 w-25 border-0 shadow mb-5 rounded"><a class="text-decoration-none text-white fs-5 fw-bolder" href="{% url 'index' %}">Accueil</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow mb-5 rounded"><a class="text-decoration-none text-white fs-5 fw-bolder" href="{% url 'connexion' %}">Reservation</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow mb-5 rounded"><a class="text-decoration-none text-white fs-5 fw-bolder" href="{% url 'connexion' %}">Service Chambre</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow mb-5 rounded"><a class="text-decoration-none text-white fs-5 fw-bolder" href="{% url 'connexion' %}">Statistique</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow mb-5 rounded"><a class="text-decoration-none text-white fs-5 fw-bolder" href="{% url 'connexion' %}">Autre revenu</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow mb-5 rounded"><a class="text-decoration-none text-white fs-5 fw-bolder" href="{% url 'connexion' %}">Paiement</a></button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}

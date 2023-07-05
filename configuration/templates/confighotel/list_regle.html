@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}list-chambre{% endblock %}
+
+{% block content %}
+    <h2 class="text-center orange">Voici la liste des règles de prix pour votre hotel</h2>
+    <div class="row">
+        {% for object in object_list %}
+            <div class="col-sm-6 my-3">
+                <h3>CATEGORIE : <a href="{% url 'confighotel:home-config' %}">{{ object.categorie }}</a></h3>
+                <p>
+                    <span>PRIX ENFANT : {{ object.prix_enfant }}</span><br>
+                    <span>PRIX ADULTE : {{ object.prix_adulte }}</span>
+                </p>
+                <a href="{% url 'confighotel:update-rule' object.id %}">Modifier la règle</a>
+                <a href="{% url 'confighotel:delete-rule' object.id %}">Supprimer la règle</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,58 @@
+/* a partie configuration des couleurs et du footer */
+html{
+    --orange : orange;
+    --noire : black;
+    --semi-noire: #111;
+    --blanc : white;
+    --white : whitesmoke;
+}
+html, body{
+    height: 99.9%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--white);
+}
+main{
+    flex-grow: 1;
+}
+
+img.logo{
+    height: 60px;
+    border-radius: 50%;
+}
+/* la partie menu page d'accueil */
+button{
+    height: 100px;
+    margin: 10px;
+    background: var(--orange);
+}
+button a:hover{
+    text-decoration: underline;
+    color: var(--blanc);
+}
+
+a.a-menu{
+    display: list-item;
+}
+
+/* le deuxieme menu pour les utilisateurs */
+img.img-profile{
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+/* le footer - pieds de page */
+footer{
+    background-color: var(--semi-noire);
+    color: var(--blanc);
+}
+
+.orange{
+    color: var(--orange);
+}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}detail-chambre{% endblock %}
+
+{% block content %}
+    <img src="{{ object.image.url }}" class="logo">
+    <h3>Nom Hotel : <a href="{% url 'confighotel:list-config' %}">{{ object.nom }}</a></h3>
+    <p>Telephone  : {{ object.telephone }}</p>
+    <p>Adresse    : {{ object.adresse }}</p>
+    <a href="{% url 'confighotel:update-config' object.pk %}">Modifier</a>
+{% endblock %}

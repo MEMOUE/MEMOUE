@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}list-chambre{% endblock %}
+
+{% block content %}
+    <h2>Voici la liste des configurations que vous avez fait pour votre hotel</h2>
+    <div class="row">
+        {% for object in object_list %}
+            <div class="col-sm-4">
+                <h3><a href="{{ object.get_absolute_url }}">{{ object.nom }}</a></h3>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}

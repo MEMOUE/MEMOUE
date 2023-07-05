@@ -1,0 +1,40 @@
+html {
+    --orange: orange;
+    --blanc: white;
+    --noire: black;
+    --white: whitesmoke;
+    --sombre: #111;
+}
+div#header{
+    background-color: var(--orange);
+}
+div#branding h1#site-name{
+    color: var(--blanc);
+    font-size: 1.7em;
+}
+div#user-tools a{
+    font-size: 10px;
+    text-decoration: none;
+    border: 1px solid var(--blanc);
+    border-radius: 10px 0px 10px 0;
+}
+div.breadcrumbs{
+    background-color: white;
+    color: var(--orange);
+    border-bottom: 2px dashed var(--orange);
+}
+button.theme-toggle svg{
+    border-radius: 10px;
+}
+div.breadcrumbs a{
+    color: var(--orange);
+}
+table tr a{
+    color: var(--orange);
+}
+div#content-related{
+    background-color: var(--orange);
+}
+div#content-related h2{
+    font-size: 400px;
+}

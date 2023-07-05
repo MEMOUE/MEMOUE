@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}home{% endblock %}
+<!--<div>
+    <img src="{#% static 'images/default_profile.png' %#}" alt="profile" class="img-profile" title="changer de profile">
+    <span>Bienvenue à vous : {{ user.username }}</span>
+</div>-->
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-1">
+                <button class="col-4 m-3 w-25 border-0 shadow-lg mb-5 rounded"><i class="fa-solid fa-house"></i><a class="a-menu text-decoration-none text-white fs-5 fw-semibold" href="{% url 'home-users' %}">Home</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow-lg mb-5 rounded"><i class="fa-sharp fa-solid fa-bed"></i><a class="a-menu text-decoration-none text-white fs-5 fw-semibold" href="">Réservation</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow-lg mb-5 rounded"><i class="fa-sharp fa-solid fa-bed"></i><a class="a-menu text-decoration-none text-white fs-5 fw-semibold" href="">Chambres</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow-lg mb-5 rounded"><i class="fa-sharp fa-solid fa-bed"></i><a class="a-menu text-decoration-none text-white fs-5 fw-semibold" href="{% url 'home-resto' %}">Service Resto</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow-lg mb-5 rounded"><i class="fa-sharp fa-solid fa-bed"></i><a class="a-menu text-decoration-none text-white fs-5 fw-semibold" href="">Autre Revenue</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow-lg mb-5 rounded"><i class="fa-sharp fa-solid fa-bed"></i><a class="a-menu text-decoration-none text-white fs-5 fw-semibold" href="">Paiement</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow-lg mb-5 rounded"><i class="fa-solid fa-chart-line"></i><a class="a-menu text-decoration-none text-white fs-5 fw-semibold" href="{% url 'home-stat' %}">Statistique</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow-lg mb-5 rounded"><i class="fa-solid fa-gears"></i><a class="a-menu text-decoration-none text-white fs-5 fw-semibold" href="{% url 'confighotel:home-config' %}">Parametre</a></button>
+                <button class="col-4 m-3 w-25 border-0 shadow-lg mb-5 rounded"><i class="fa-sharp fa-solid fa-circle-xmark"></i><a class="a-menu text-decoration-none text-white fs-5 fw-semibold" href="{% url 'deconnexion' %}">Deconnexion</a></button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}
