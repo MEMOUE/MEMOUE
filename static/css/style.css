@@ -5,6 +5,8 @@ html{
     --semi-noire: #111;
     --blanc : white;
     --white : whitesmoke;
+    --vert: green;
+    --rouge: red;
 }
 html, body{
     height: 99.9%;
@@ -56,3 +58,11 @@ footer{
 .orange{
     color: var(--orange);
 }
+
+.chambre-libre{
+    background-color: var(--vert);
+}
+.chambre-occupee{
+    background-color: var(--rouge);
+}
+

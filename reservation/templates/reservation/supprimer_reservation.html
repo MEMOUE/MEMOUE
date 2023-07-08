@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container text-center">
+    <h1>Supprimer la réservation</h1>
+    <p>Voulez-vous vraiment supprimer la réservation N° "{{ reservation.id }}" ?</p>
+    <form method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
+        <a href="{% url 'liste_reservation' %}" class="btn btn-secondary">Annuler</a>
+    </div>
+{% endblock %}

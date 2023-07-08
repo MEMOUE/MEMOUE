@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}welcome page{% endblock %}
 
 {% block content %}
@@ -16,6 +16,7 @@
                 <button class="col-4 m-3 w-25 border-0 shadow mb-5 rounded"><a class="text-decoration-none text-white fs-5 fw-bolder" href="{% url 'connexion' %}">Statistique</a></button>
                 <button class="col-4 m-3 w-25 border-0 shadow mb-5 rounded"><a class="text-decoration-none text-white fs-5 fw-bolder" href="{% url 'connexion' %}">Autre revenu</a></button>
                 <button class="col-4 m-3 w-25 border-0 shadow mb-5 rounded"><a class="text-decoration-none text-white fs-5 fw-bolder" href="{% url 'connexion' %}">Paiement</a></button>
+            
             </div>
         </div>
     </div>

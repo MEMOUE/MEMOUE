@@ -26,6 +26,8 @@ urlpatterns = [
     path("facture/", Facture.as_view(), name="facture"),
     path("pdf/", pdf, name="pdf"),
     path("users/", include("users.urls")),
+    path("chambre/", include("chambre.urls")),
+    path("reservation", include("reservation.urls")),
     path("resto/", include("resto.urls")),
     path("config/", include("configuration.urls")),
     path("stats/", include("statistique.urls")),

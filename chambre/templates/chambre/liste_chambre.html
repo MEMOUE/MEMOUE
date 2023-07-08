@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}list-chambre{% endblock %}
+
+{% block content %}
+    <div class="container">
+         <div class="d-flex justify-content-center align-items-center my-2">
+            <a href="{% url 'chambre' %}" class="btn btn-success text-center">Nouvelle Chambre</a>
+        </div>
+        <h1 class="text-center orange">Liste des chambres</h1>
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>Numéro de chambre</th>
+                    <th>Type de chambre</th>
+                    <th>Statut</th>
+                    <th>Prix</th>
+                    <th>Date</th>
+                    <th>Etat</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for chambre in chambres %}
+                    <tr>
+                        <td>{{ chambre.numero_chambre }}</td>
+                        <td>{{ chambre.get_type_chambre_display }}</td>
+                        <td>{{ chambre.get_statut_display }}</td>
+                        <td>{{ chambre.prix }}</td>
+                        <td>{{ chambre.date }}</td>
+                        <td class="text-white{% if chambre.etat == 'libre' %}chambre-libre{% else %}chambre-occupee{% endif %}">
+                            {{ chambre.get_etat_display }}
+                        </td>
+                        
+                    </tr>
+                    
+                {% empty %}
+                    <tr>
+                        <td colspan="4">Aucune chambre disponible.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+{% endblock %}
